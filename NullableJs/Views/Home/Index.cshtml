@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<style type="text/css">
+    body span {
+        font-size: 1.3em;
+    }
+</style>
+
+<div class="jumbotron">
+    <h1>Nullable JS</h1>
+    <p class="lead">This library is a nullable wrapper for JavaScript</p>
+
+</div>
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-2">
+        <span class="number1">
+
+        </span>
+
+        <br />
+        <span class="text1">
+
+        </span>
+        <br />
+        <span class="date1">
+
+        </span>
+        <br />
+        <span class="nullable1">
+
+        </span>
+        <br />
+        <span class="nullable2">
+
+        </span>
+        <br />
+        <span class="rando1">
+
+        </span>
+    </div>
+
+</div>
+
+@section scripts {
+    <script src="~/Scripts/nullable.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var n1 = new Nullable(4.5);
+            $(".number1").text(Nullable.UltraExpand(n1));
+
+            var t1 = new Nullable("realism");
+            $(".text1").text(Nullable.UltraExpand(t1));
+
+            var d1 = new Nullable(new Date());
+            $(".date1").text(Nullable.UltraExpand(d1));
+
+            var def = Nullable.Empty();
+            $(".nullable1").text(Nullable.UltraExpand(def));
+
+            var def = Nullable.Empty();
+            $(".nullable2").text(Nullable.UltraExpand(sdgsdfgsdfgsdfg));
+
+
+
+
+            var o1 = new Nullable({ r: 5, g: 76, a: 444 });
+            $(".rando1").text(Nullable.Expand(o1));
+
+        });
+    </script>
+}
